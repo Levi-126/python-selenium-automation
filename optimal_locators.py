@@ -6,7 +6,7 @@ driver = webdriver.Chrome()
 driver.maximize_window()
 
 driver.get('https://stackoverflow.com/users/signup')
-sleep(5)
+sleep(4)
 
 
 #Locator For "Create Your Account"
