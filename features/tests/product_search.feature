@@ -1,7 +1,6 @@
-Feature: Test Scenarios for Search functionality
+Feature: Verify Product Search Functionality
 
   Scenario: User can search for a product
-    Given Open Google page
-    When Input Car into search field
-    And Click on search icon
-    Then Product results for Car are shown
+    Given Open Target Webpage
+    When Search for guitar
+    Then Verify search results for guitar shown
