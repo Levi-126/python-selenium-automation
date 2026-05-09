@@ -7,16 +7,22 @@ CART_ICON = (By.CSS_SELECTOR, '[data-test="@web/CartLink"]')
 SEARCH_FIELD = (By.ID, 'search')
 SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 
-@when("Search for {product}")
-def search_product(context, product):
-    context.driver.find_element(*SEARCH_FIELD).send_keys(product)
-    context.driver.find_element(*SEARCH_BTN).click()
-    sleep(7)
+@when('Select the Target Circle Icon')
+def select_target_circle(context):
+    context.driver.find_element(By.CSS_SELECTOR, '#utilityNav-circle').click()
+    sleep(2)
 
 
-@when('Click on Cart icon')
-def click_cart(context):
-    context.driver.find_element(*CART_ICON).click()
+# @when("Search for {product}")
+# def search_product(context, product):
+#     context.driver.find_element(*SEARCH_FIELD).send_keys(product)
+#     context.driver.find_element(*SEARCH_BTN).click()
+#     sleep(7)
+#
+#
+# @when('Click on Cart icon')
+# def click_cart(context):
+#     context.driver.find_element(*CART_ICON).click()
 
 
 #Additional steps for checking login (Material from Lesson #3)

@@ -6,4 +6,4 @@ from time import sleep
 @given('Open Target Webpage')
 def open_target(context):
     context.driver.get('https://www.target.com/')
-    sleep(4)
+    sleep(2)
