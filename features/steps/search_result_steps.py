@@ -12,16 +12,30 @@ def verify_story_card_amount(context, amount):
     assert len(links) == amount, f'Expected {amount} links but got {len(links)}'
 
 
-#Previously used code from Lana
 
 # SEARCH_RESULT_COUNT_TEXT = (By.XPATH, "//div[contains(@class, 'styles_resultCount')]")
-#
-#
-# @then("Verify search results for {product} shown")
-# def verify_search_results(context, product):
-#     actual_result = context.driver.find_element(*SEARCH_RESULT_COUNT_TEXT).text
-#     assert product in actual_result, f'Expected "{product}" not in actual "{actual_result}"'
 
+ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
+SIDE_NAV_ADD_TO_CART_BTN = (By.CSS_SELECTOR, "button[data-test='orderPickupButton'][id*='addToCartButton']")
+SELECT_TO_VIEW_THE_CART = (By.CSS_SELECTOR, "a[href='/cart']")
+SUBTOTAL_TEXT = (By.XPATH, "//span[contains(text(), 'subtotal')]")
 
+@then("Add Item to Cart")
+def add_item_in_cart(context):
+    context.driver.find_element(*ADD_TO_CART_BTN).click()
+    sleep(5)
 
+@then("Confirm Add Item to Cart")
+def cart_confirmation(context):
+    context.driver.find_element(*SIDE_NAV_ADD_TO_CART_BTN).click()
+    sleep(5)
 
+@then("Select The View Cart Option")
+def cart_confirmation(context):
+    context.driver.find_element(*SELECT_TO_VIEW_THE_CART).click()
+    sleep(5)
+
+@then("Verify Item In Cart Is {amount}")
+def verify_item_count(context, amount):
+    link = context.driver.find_element(*SUBTOTAL_TEXT).text
+    assert f'{amount} item' in link, f"Expected {amount} items but got {link}"

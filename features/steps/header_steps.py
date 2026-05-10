@@ -13,13 +13,16 @@ def select_target_circle(context):
     sleep(2)
 
 
-# @when("Search for {product}")
-# def search_product(context, product):
-#     context.driver.find_element(*SEARCH_FIELD).send_keys(product)
-#     context.driver.find_element(*SEARCH_BTN).click()
-#     sleep(7)
-#
-#
+@when("Search for {product}")
+def search_product(context, product):
+    context.driver.find_element(*SEARCH_FIELD).send_keys(product)
+    context.driver.find_element(*SEARCH_BTN).click()
+    sleep(4)
+
+
+
+
+
 # @when('Click on Cart icon')
 # def click_cart(context):
 #     context.driver.find_element(*CART_ICON).click()
