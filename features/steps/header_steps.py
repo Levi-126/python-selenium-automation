@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
@@ -10,14 +11,15 @@ SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 @when('Select the Target Circle Icon')
 def select_target_circle(context):
     context.driver.find_element(By.CSS_SELECTOR, '#utilityNav-circle').click()
-    sleep(2)
+
 
 
 @when("Search for {product}")
 def search_product(context, product):
+    context.wait.until(EC.visibility_of_element_located(SEARCH_FIELD))
     context.driver.find_element(*SEARCH_FIELD).send_keys(product)
     context.driver.find_element(*SEARCH_BTN).click()
-    sleep(4)
+
 
 
 

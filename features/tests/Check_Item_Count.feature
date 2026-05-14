@@ -3,7 +3,7 @@ Feature: Checking Item Cart Acknowledgement
 
   Scenario: Make Sure Items Are Added to Cart
      Given Open Target Webpage
-     When Search for Item
+     When Search for Bamboo
      Then Add Item to Cart
      Then Confirm Add Item to Cart
      Then Select The View Cart Option
