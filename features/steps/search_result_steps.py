@@ -50,6 +50,7 @@ def verify_search_results(context, product):
 
 
 
+
 # PREVIOUSLY USED CODE FOR DIFFERENT SCENARIO
 
 # SEARCH_RESULT_COUNT_TEXT = (By.XPATH, "//div[contains(@class, 'styles_resultCount')]")

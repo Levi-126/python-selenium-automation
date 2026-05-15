@@ -23,12 +23,10 @@ def search_product(context, product):
 
 
 
-
-
-# @when('Click on Cart icon')
-# def click_cart(context):
-#     context.driver.find_element(*CART_ICON).click()
-
+@when('Select The Cart Icon')
+def click_cart(context):
+    #context.driver.find_element(*CART_ICON).click()
+    context.app.header.click_cart()
 
 #Additional steps for checking login (Material from Lesson #3)
 # @when('Select Your Account')
