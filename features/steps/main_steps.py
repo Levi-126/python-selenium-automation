@@ -5,9 +5,9 @@ from time import sleep
 
 @given('Open Target Webpage')
 def open_target(context):
-    context.driver.get('https://www.target.com/')
-    sleep(2)
-
+    # context.driver.get('https://www.target.com/')
+    # sleep(2)
+    context.app.main_page.open_main()
 
 @given('Open Guitar Search Webpage From Target')
 def open_target(context):

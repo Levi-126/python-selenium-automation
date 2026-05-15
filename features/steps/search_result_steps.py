@@ -42,7 +42,11 @@ def verify_item_count(context, amount):
     assert f'{amount} item' in link, f"Expected {amount} items but got {link}"
 
 
-
+@then("Verify search results for {product} shown")
+def verify_search_results(context, product):
+    # actual_result = context.driver.find_element(*SEARCH_RESULT_COUNT_TEXT).text
+    # assert product in actual_result, f'Expected "{product}" not in actual "{actual_result}"'
+    context.app.search_results_page.verify_search_results(product)
 
 
 

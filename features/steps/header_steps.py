@@ -16,10 +16,10 @@ def select_target_circle(context):
 
 @when("Search for {product}")
 def search_product(context, product):
-    context.wait.until(EC.visibility_of_element_located(SEARCH_FIELD))
-    context.driver.find_element(*SEARCH_FIELD).send_keys(product)
-    context.driver.find_element(*SEARCH_BTN).click()
-
+    # context.wait.until(EC.visibility_of_element_located(SEARCH_FIELD))
+    # context.driver.find_element(*SEARCH_FIELD).send_keys(product)
+    # context.driver.find_element(*SEARCH_BTN).click()
+    context.app.header.search_product(product)
 
 
 

@@ -4,3 +4,5 @@ Feature: Verify Product Search Functionality
     Given Open Target Webpage
     When Search for guitar
     Then Verify search results for guitar shown
+
+#Running Test Cast With Page Object Patterns
